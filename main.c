@@ -25,32 +25,11 @@ int main() {
     }
 }
 
-void printLogo() {
-    printf("Calculator\n");
-    printf("==========\n");
-}
-
-void printMainMenu() {
-    printf("1. Basic operations\n");
-    printf("2. Trignometric operations\n");
-    printf("3. Algebric operations\n");
-    printf("4. Logarithmic operations\n");
-}
-
-int getUserInput() {
-    int choice;
-    printf("Choose: ");
-    scanf("%d", &choice);
-    return choice;
-}
-
-float getNumInput(char msg[]) {
-    float num;
-    printf("%s", msg);
-    scanf("%f", &num);
-    return num;
-}
-
+/*
+	@@@@@@@@@@@@@@@@@@@@@@@@@@
+		HANDLING FUNCTIONS
+	@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
 void handleBasicOperations() {
     printf("1. Add\n");
     printf("2. Subtract\n");
@@ -78,3 +57,39 @@ void handleBasicOperations() {
     }
 
 };
+
+/*
+	@@@@@@@@@@@@@@@@@@@@@@@@@@
+		DISPLAY FUNCTIONS
+	@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+void printLogo() {
+    printf("Calculator\n");
+    printf("==========\n");
+}
+
+void printMainMenu() {
+    printf("1. Basic operations\n");
+    printf("2. Trignometric operations\n");
+    printf("3. Algebric operations\n");
+    printf("4. Logarithmic operations\n");
+}
+
+/*
+	@@@@@@@@@@@@@@@@@@@@@@@@
+		INPUT FUNCTIONS
+	@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+int getUserInput() {
+    int choice;
+    printf("Choose: ");
+    scanf("%d", &choice);
+    return choice;
+}
+
+float getNumInput(char msg[]) {
+    float num;
+    printf("%s", msg);
+    scanf("%f", &num);
+    return num;
+}
