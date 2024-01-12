@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 // Function declarations
 void printLogo();
 void printMainMenu();
 int getUserInput();
-void handleBasicOperations();
 float getNumInput(char[]);
 void clearScreen();
+void handleBasicOperations();
+void handleTrignoOperations();
 
 // Main function
 int main() {
@@ -21,6 +23,7 @@ int main() {
             handleBasicOperations();
             break;
         case 2:
+        	handleTrignoOperations();
             break;
         case 3:
             break;
@@ -64,11 +67,50 @@ void handleBasicOperations() {
         case 4:
             printf("Answer: %.2f\n", n1 / n2);
             break;
-
     }
 
 };
 
+void handleTrignoOperations() {
+	// Clear screen
+	clearScreen();
+	
+	// Print calculator
+	printLogo();
+	
+	// Print basic operations menu
+    printf("\n1. Sin\n");
+    printf("2. Cos\n");
+    printf("3. Tan\n");
+    printf("4. Sin Inverse\n");
+    printf("5. Cos Inverse\n");
+    printf("6. Tan Inverse\n");
+    int choice = getUserInput();
+
+    float angle = getNumInput("\nEnter angle: ");
+    
+    switch (choice) {
+        case 1:
+            printf("Answer: %.4f radians\n", sin(angle));
+            break;
+        case 2:
+            printf("Answer: %.4f radians\n", cos(angle));
+            break;
+        case 3:
+            printf("Answer: %.4f radians\n", tan(angle));
+            break;
+        case 4:
+            printf("Answer: %.4f radians\n", asin(angle));
+            break;
+        case 5:
+            printf("Answer: %.4f radians\n", acos(angle));
+            break;
+        case 6:
+            printf("Answer: %.4f radians\n", atan(angle));
+            break;
+
+    }
+}
 /*
 	@@@@@@@@@@@@@@@@@@@@@@@@@@
 		DISPLAY FUNCTIONS
