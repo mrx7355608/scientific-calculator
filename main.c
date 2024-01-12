@@ -45,9 +45,9 @@ int getUserInput() {
 }
 
 float getNumInput(char msg[]) {
-    int num;
+    float num;
     printf("%s", msg);
-    scanf("%d", &num);
+    scanf("%f", &num);
     return num;
 }
 
@@ -63,16 +63,16 @@ void handleBasicOperations() {
 
     switch (choice) {
         case 1:
-            printf("Answer: %f", n1 + n2);
+            printf("Answer: %.2f\n", n1 + n2);
             break;
         case 2:
-            printf("Answer: %f", n1 - n2);
+            printf("Answer: %.2f\n", n1 - n2);
             break;
         case 3:
-            printf("Answer: %f", n1 * n2);
+            printf("Answer: %.2f\n", n1 * n2);
             break;
         case 4:
-            printf("Answer: %.2f", n1 / n2);
+            printf("Answer: %.2f\n", n1 / n2);
             break;
 
     }
