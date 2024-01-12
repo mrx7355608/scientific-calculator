@@ -1,11 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+// Function declarations
 void printLogo();
 void printMainMenu();
 int getUserInput();
 void handleBasicOperations();
 float getNumInput(char[]);
+void clearScreen();
 
+// Main function
 int main() {
     printLogo();
 
@@ -31,6 +35,13 @@ int main() {
 	@@@@@@@@@@@@@@@@@@@@@@@@@@
 */
 void handleBasicOperations() {
+	// Clear screen
+	clearScreen();
+	
+	// Print calculator
+	printLogo();
+	
+	// Print basic operations menu
     printf("1. Add\n");
     printf("2. Subtract\n");
     printf("3. Multiply\n");
@@ -73,6 +84,10 @@ void printMainMenu() {
     printf("2. Trignometric operations\n");
     printf("3. Algebric operations\n");
     printf("4. Logarithmic operations\n");
+}
+
+void clearScreen() {
+	system("cls");
 }
 
 /*
