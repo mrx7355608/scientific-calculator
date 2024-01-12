@@ -42,13 +42,13 @@ void handleBasicOperations() {
 	printLogo();
 	
 	// Print basic operations menu
-    printf("1. Add\n");
+    printf("\n1. Add\n");
     printf("2. Subtract\n");
     printf("3. Multiply\n");
     printf("4. Divide\n");
     int choice = getUserInput();
 
-    float n1 = getNumInput("Enter number 1: ");
+    float n1 = getNumInput("\nEnter number 1: ");
     float n2 = getNumInput("Enter number 2: ");
 
     switch (choice) {
@@ -80,7 +80,7 @@ void printLogo() {
 }
 
 void printMainMenu() {
-    printf("1. Basic operations\n");
+    printf("\n1. Basic operations\n");
     printf("2. Trignometric operations\n");
     printf("3. Algebric operations\n");
     printf("4. Logarithmic operations\n");
