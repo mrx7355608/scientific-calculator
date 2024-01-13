@@ -11,11 +11,14 @@ void clearScreen();
 void handleBasicOperations();
 void handleTrignoOperations();
 void handleAlgebricOperations();
+void handleLogOperations();
 
 float exponentiation(float, float);
 float nthRoot(float, int);
 int factorial(int);
 float absoluteValue(float);
+
+float customBaseLog(float, float);
 
 // Main function
 int main() {
@@ -35,6 +38,7 @@ int main() {
         	handleAlgebricOperations();
             break;
         case 4:
+        	handleLogOperations();
             break;
     }
 }
@@ -167,6 +171,38 @@ void handleAlgebricOperations() {
 
 };
 
+void handleLogOperations() {
+	// Clear screen
+	clearScreen();
+	
+	// Print calculator
+	printLogo();
+	
+    printf("\n1. Logarithm (base 10)\n");
+    printf("2. Natural logarithm (base e)\n");
+    printf("3. Custom base logarithm\n");
+    int choice = getUserInput();
+
+    float n1 = getNumInput("\nEnter number: ");
+
+    switch (choice) {
+        case 1:
+        	printf("Answer: %.4f\n", log10(n1));
+            break;
+            
+        case 2:
+            printf("Answer: %.4f\n", log(n1));
+            break;
+            
+        case 3:{
+        	float base = getNumInput("Enter base: ");
+			printf("Answer: %.4f\n", customBaseLog(n1, base));
+            break;
+		}  
+    }
+
+};
+
 /*
 	@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		CALCULATOR FUNCTIONS
@@ -204,6 +240,11 @@ float absoluteValue(float num) {
 		return num;
 	}
 };
+
+// Logarithm functions
+float customBaseLog(float num, float base) {
+	return log(num) / log(base);
+}
 
 /*
 	@@@@@@@@@@@@@@@@@@@@@@@@@@
