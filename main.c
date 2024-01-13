@@ -11,8 +11,9 @@ void clearScreen();
 void handleBasicOperations();
 void handleTrignoOperations();
 void handleAlgebricOperations();
-float exponentiation(float);
-float nthRoot(float, float);
+
+float exponentiation(float, float);
+float nthRoot(float, int);
 int factorial(int);
 float absoluteValue(float);
 
@@ -135,24 +136,30 @@ void handleAlgebricOperations() {
     float n1 = getNumInput("\nEnter number: ");
 
     switch (choice) {
-        case 1:
-            printf("Answer: %.2f\n", exponentiation(n1));
+        case 1: {
+        	float power = getNumInput("Enter power: ");
+        	printf("Answer: %.2f\n", exponentiation(n1, power));
             break;
+		}
+            
         case 2:
             printf("Answer: %.2f\n", sqrt(n1));
             break;
+            
         case 3:
             printf("Answer: %.2f\n", cbrt(n1));
             break;
+            
         case 4: {
-        	float nth = getNumInput("\nEnter number (n): ");
+        	float nth = getNumInput("Enter N: ");
             printf("Answer: %.2f\n", nthRoot(n1, nth));
             break;
-
 		}
+		
         case 5:
-            printf("Answer: %.2f\n", factorial(n1));
+            printf("Answer: %d\n", factorial((int) n1));
             break;
+            
         case 6:
             printf("Answer: %.2f\n", absoluteValue(n1));
             break;
@@ -165,22 +172,37 @@ void handleAlgebricOperations() {
 		CALCULATOR FUNCTIONS
 	@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 */
-float exponentiation(float num) {
-	/* 
-		TODO: implement this function
-	*/
-	return 1.0;
+
+// Algebric functions
+float exponentiation(float num, float power) {
+	float answer = pow(num, power);
+	return answer;
 };
 
-float nthRoot(float num, float n) {
+float nthRoot(float num, int n) {
 	float answer = pow(num, 1/n);
 	return answer;
 };
 
 int factorial(int num) {
-};
+    if (num < 0) {
+        return 1;
+    }
+    
+    if (num == 1) {
+        return num;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
 
 float absoluteValue(float num) {
+	if (num < 0) {
+		// returns absolute value for float data type
+		return fabs(num);
+	} else {
+		return num;
+	}
 };
 
 /*
